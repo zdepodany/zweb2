@@ -382,6 +382,12 @@
   max-height: 88px;
 }
 
+.card.black img[src*="cursor.svg"] {
+  filter: brightness(0) invert(1);
+  width: 72px;
+  height: 72px;
+}
+
 .section-header {
   grid-column-gap: 24px;
   grid-row-gap: 24px;
@@ -1020,6 +1026,10 @@
 
   .card-image.white-card-image {
     max-height: 72px;
+  }
+
+  .card-image.white-card-image[src$=".svg"] {
+    max-height: 48px;
   }
 
   .form-block {
