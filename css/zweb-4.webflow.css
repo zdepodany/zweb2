@@ -305,6 +305,44 @@
   box-shadow: 0 2px 40px 16px #006dec14;
 }
 
+/* Speciální styly pro karty nástrojů */
+.card.black:has(img[src*="icon_js.svg"]):hover {
+  border-color: #F7DF1E;
+  box-shadow: 0 2px 40px 16px rgba(247, 223, 30, 0.14);
+}
+
+.card.black:has(img[src*="icon_html5.svg"]):hover {
+  border-color: #E34F26;
+  box-shadow: 0 2px 40px 16px rgba(227, 79, 38, 0.14);
+}
+
+.card.black:has(img[src*="icon_css3.svg"]):hover {
+  border-color: #264DE4;
+  box-shadow: 0 2px 40px 16px rgba(38, 77, 228, 0.14);
+}
+
+.card.black:has(img[src*="icon_webflow.svg"]):hover {
+  border-color: #4353FF;
+  box-shadow: 0 2px 40px 16px rgba(67, 83, 255, 0.14);
+}
+
+.card.black:has(img[src*="cursor.svg"]):hover {
+  border-color: #FFFFFF;
+  box-shadow: 0 2px 40px 16px rgba(255, 255, 255, 0.08);
+}
+
+/* Zjednodušený efekt pro Figma kartu */
+.card.black:has(img[src*="icon_figma.svg"]):hover {
+  border-color: #FF61F6;
+  box-shadow: 0 2px 40px 16px rgba(255, 97, 246, 0.14);
+}
+
+/* Odstraním původní hover efekt pro karty nástrojů */
+.tools-grid .card.black:hover {
+  border-color: inherit;
+  box-shadow: inherit;
+}
+
 .heading-2 {
   color: var(--white);
   margin-top: 0;
