@@ -991,6 +991,26 @@
   width: 100%;
   transition: transform 0.3s ease;
   opacity: 1 !important;
+  position: relative;
+}
+
+.gig-link::after {
+  content: '';
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  background-image: url('../images/link_icon_grey.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  filter: brightness(0) invert(1);
+}
+
+.gig-link:hover::after {
+  opacity: 1;
 }
 
 .gig-link:hover {
@@ -1289,7 +1309,7 @@
   }
 
   .gigs-wrapper {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 24px;
   }
 }
@@ -1466,13 +1486,21 @@
   }
 
   .gigs-wrapper {
-    grid-template-columns: 1fr;
-    grid-gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 16px;
   }
 
   .gig-link:hover {
     transform: none;
     box-shadow: none;
+  }
+
+  .gig-link::after {
+    opacity: 0.8;
+    top: 12px;
+    right: 12px;
+    width: 24px;
+    height: 24px;
   }
 }
 
@@ -1635,7 +1663,15 @@
   }
 
   .gigs-wrapper {
-    grid-gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 12px;
+  }
+
+  .gig-link::after {
+    width: 20px;
+    height: 20px;
+    top: 8px;
+    right: 8px;
   }
 }
 
