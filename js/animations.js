@@ -22,4 +22,41 @@ document.addEventListener('DOMContentLoaded', function() {
         // Přidat do observeru
         fadeInObserver.observe(element);
     });
+
+    // Smooth scroll pro navigační odkazy
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const startPosition = window.pageYOffset;
+                const distance = targetPosition - startPosition;
+                const duration = 1500; // Prodloužíme na 1.5s pro plynulejší průběh
+                let start = null;
+                
+                function animation(currentTime) {
+                    if (start === null) start = currentTime;
+                    const timeElapsed = currentTime - start;
+                    const progress = Math.min(timeElapsed / duration, 1);
+                    
+                    // Jednodušší easing funkce pro plynulejší průběh
+                    const easeOutQuart = progress => {
+                        return 1 - Math.pow(1 - progress, 4);
+                    };
+                    
+                    window.scrollTo(0, startPosition + distance * easeOutQuart(progress));
+                    
+                    if (timeElapsed < duration) {
+                        requestAnimationFrame(animation);
+                    }
+                }
+                
+                requestAnimationFrame(animation);
+            }
+        });
+    });
 }); 

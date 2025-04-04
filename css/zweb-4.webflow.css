@@ -1779,6 +1779,10 @@
   }
 }
 
+/* Odstraníme CSS smooth scroll */
+html {
+  scroll-behavior: auto;
+}
 
 @font-face {
   font-family: 'Lexend';
