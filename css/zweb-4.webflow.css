@@ -1847,3 +1847,67 @@ html {
   font-style: normal;
   font-display: swap;
 }
+
+.card.black:has(img[src*="pencil.and.outline.svg"]) {
+  position: relative;
+}
+
+.card.black:has(img[src*="pencil.and.outline.svg"]) .card-image {
+  filter: brightness(0) invert(1);
+  opacity: 0.42;
+  transition: all 0.3s ease;
+}
+
+.card.black:has(img[src*="pencil.and.outline.svg"]):hover .card-image {
+  filter: brightness(0) saturate(100%) invert(31%) sepia(98%) saturate(1746%) hue-rotate(199deg) brightness(97%) contrast(101%);
+  opacity: 1;
+}
+
+.card.black:has(img[src*="pencil.and.outline.svg"]) .card-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/pencil.and.outline.svg');
+  filter: brightness(0) saturate(100%) invert(31%) sepia(98%) saturate(1746%) hue-rotate(199deg) brightness(97%) contrast(101%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card.black:has(img[src*="pencil.and.outline.svg"]) .card-image:hover::after {
+  opacity: 1;
+}
+
+.card.black .icon-wrapper {
+  position: relative;
+  width: 72px;
+  height: 72px;
+}
+
+.card.black .white-icon,
+.card.black .blue-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.card.black .white-icon {
+  opacity: 0.42;
+}
+
+.card.black .blue-icon {
+  opacity: 0;
+}
+
+.card.black:hover .white-icon {
+  opacity: 0;
+}
+
+.card.black:hover .blue-icon {
+  opacity: 1;
+}
