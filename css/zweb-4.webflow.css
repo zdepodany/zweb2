@@ -892,28 +892,39 @@
 
 .swiper.references {
   width: 100%;
+  overflow: visible;
 }
 
 .swiper-wrapper.references {
   flex-direction: row;
   justify-content: flex-start;
   align-items: stretch;
-  width: 50%;
+  width: 100%;
   display: flex;
+  overflow: visible;
 }
 
 .swiper-slide.references {
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+  will-change: transform;
   background-color: #181818;
   border: 1px solid #212121;
   border-radius: 4px;
-  flex-direction: column;
-  flex: none;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 90%;
-  height: 20rem;
   padding: 32px 24px;
+  height: 320px;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.swiper-slide.references .reference-text {
+  transform: translateZ(20px);
+}
+
+.swiper-slide.references .reference-subtext-wrapper {
+  transform: translateZ(15px);
+  margin-top: auto;
 }
 
 .reference-text {
@@ -1212,6 +1223,7 @@
 
   .section.vertical.no-chin {
     padding-bottom: 0;
+    overflow: visible;
   }
 
   .hero-content-container {
@@ -1910,4 +1922,8 @@ html {
 
 .card.black:hover .blue-icon {
   opacity: 1;
+}
+
+#references {
+  overflow: visible;
 }
