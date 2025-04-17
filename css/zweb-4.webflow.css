@@ -955,10 +955,27 @@
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   text-decoration: none;
   display: flex;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.reference-link:hover {
+  opacity: 1;
+}
+
+.link-icon {
+  width: 24px;
+  height: 24px;
+  opacity: 0.7;
+}
+
+.studiobarak-reference-logo {
+  height: 24px;
+  width: auto;
 }
 
 .taborstrelka-reference-logo {
@@ -970,6 +987,7 @@
   font-weight: 700;
   line-height: 24px;
   text-decoration: none;
+  opacity: 1;
 }
 
 .reference-arrows-wrapper {
@@ -1926,4 +1944,21 @@ html {
 
 #references {
   overflow: visible;
+}
+
+.reference-website-text {
+  color: var(--white);
+  font-family: Lexend, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.reference-link:hover .reference-website-text {
+  opacity: 1;
+}
+
+.reference-link:hover .link-icon {
+  opacity: 1;
 }
