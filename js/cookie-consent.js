@@ -26,11 +26,10 @@ document.addEventListener('DOMContentLoaded', function() {
         cookieConsent.classList.remove('show');
     }
 
-    // Event listener pro tlačítko "Přijmout vše"
-    acceptAllButton.addEventListener('click', function() {
+    // Event listener pro tlačítko "Přijmout"
+    acceptButton.addEventListener('click', function() {
         const consent = {
             analytics: true,
-            marketing: true,
             necessary: true,
             timestamp: new Date().toISOString()
         };
@@ -38,14 +37,12 @@ document.addEventListener('DOMContentLoaded', function() {
         enableGoogleAnalytics();
     });
 
-    // Event listener pro tlačítko "Nastavení"
-    settingsButton.addEventListener('click', function() {
-        // Zde můžete přidat logiku pro zobrazení detailního nastavení cookies
-        // Pro jednoduchost zatím jen zakážeme Google Analytics
+    // Event listener pro tlačítko "Odmítnout"
+    declineButton.addEventListener('click', function() {
+        // Zakážeme Google Analytics
         window['ga-disable-G-X7272ZK89Z'] = true;
         const consent = {
             analytics: false,
-            marketing: false,
             necessary: true,
             timestamp: new Date().toISOString()
         };
