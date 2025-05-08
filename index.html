@@ -318,6 +318,7 @@
       <div id="w-node-_6c4af014-90a6-35ac-92a5-9e27e2338d6a-a08ba0fe" class="footer-socials-wrapper">
         <a href="https://www.instagram.com/zdepodany_ui/" target="_blank" class="footer-social-icon w-inline-block"><img src="images/mdi_instagram_white.svg" loading="lazy" alt="Instagram"></a>
         <a href="https://www.linkedin.com/in/zdenekpodany/" target="_blank" class="footer-social-icon w-inline-block"><img src="images/bi_linkedin_white.svg" loading="lazy" alt="LinkedIn"></a>
+        <a href="https://www.facebook.com/profile.php?id=61575667091262" target="_blank" class="footer-social-icon w-inline-block"><img src="images/mdi_facebook_white.svg" loading="lazy" alt="Facebook"></a>
       </div>
       <div id="w-node-_72d32d19-66b6-3168-be3d-233cf03af61b-a08ba0fe" class="footer-info-subtext">
         <div class="footer-text">Fyzická osoba<br>podnikající dle živnostenského zákona</div>
@@ -348,24 +349,7 @@
   <script src="js/cookie-consent.js" type="text/javascript"></script>
   <script src="https://unpkg.com/vanilla-tilt@1.8.0/dist/vanilla-tilt.min.js"></script>
   <script>
-const swiper = new Swiper(".swiper", {
-  // Optional parameters
-  slidesPerView: 1.2,
-  spaceBetween: 16,
-  breakpoints: {
-    900: {
-      slidesPerView: 2.2,
-      spaceBetween: 24
-    },
-  },
-  // Navigation arrows
-  navigation: {
-    nextEl: ".swiper-btn-next",
-    prevEl: ".swiper-btn-prev",
-  },
-});
-
-// Inicializace 3D efektu pro referenční karty
+// 3D efekt pro referenční karty
 document.querySelectorAll('.swiper-slide.references').forEach(card => {
   VanillaTilt.init(card, {
     max: 7.5,
@@ -377,5 +361,6 @@ document.querySelectorAll('.swiper-slide.references').forEach(card => {
   });
 });
 </script>
+  <script src="js/mobile-menu.js"></script>
 </body>
 </html>
