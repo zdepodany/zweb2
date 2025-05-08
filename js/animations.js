@@ -59,4 +59,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Inicializace 3D efektu pro reference v gridu
+    if (window.VanillaTilt) {
+        document.querySelectorAll('.reference-card').forEach(card => {
+            VanillaTilt.init(card, {
+                max: 7.5,
+                speed: 300,
+                glare: true,
+                "max-glare": 0.1,
+                scale: 1.02,
+                gyroscope: false
+            });
+        });
+    }
 }); 

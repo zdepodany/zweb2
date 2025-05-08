@@ -928,13 +928,14 @@
 }
 
 .reference-text {
-  color: var(--white);
+  color: var(--lightgrey);
   width: 100%;
   margin-bottom: 0;
   font-family: Lexend, sans-serif;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 200;
   line-height: 22px;
+  letter-spacing: 0.03em;
 }
 
 .reference-subtext-wrapper {
@@ -1215,6 +1216,7 @@
 
   .body {
     background-image: linear-gradient(to right, #000, #0b0b0b 50%, #000);
+    max-width: 100vw;
   }
 
   .ellipsebackground {
@@ -2043,4 +2045,60 @@ html {
     font-size: 14px;
     line-height: 20px;
   }
+}
+
+/* Reference grid nový styl */
+.references-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  width: 100%;
+  margin-top: 48px;
+}
+
+.reference-card {
+  background-color: #181818;
+  border: 1px solid #212121;
+  border-radius: 8px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 320px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  will-change: transform;
+}
+
+.reference-card:hover {
+  box-shadow: 0 8px 32px 0 #006dec22;
+  /* VanillaTilt se postará o transform */
+}
+
+@media screen and (max-width: 991px) {
+  .references-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .references-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .reference-card {
+    min-height: 220px;
+    padding: 20px 12px;
+  }
+}
+
+/* Odstraním Swiper styly */
+.swiper.references, .swiper-wrapper.references, .swiper-slide.references, .reference-arrows-wrapper, .swiper-btn-prev, .swiper-btn-next, .reference-arrow-next, .reference-arrow-previous {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
 }
