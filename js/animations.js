@@ -73,4 +73,17 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    // Zobrazení potvrzení po odeslání kontaktního formuláře
+    const successEl = document.getElementById('form-success-message');
+    const urlParams = new URLSearchParams(window.location.search);
+    if (successEl && urlParams.get('sent') === '1') {
+        successEl.removeAttribute('hidden');
+        successEl.style.transition = 'opacity 0.4s ease-out';
+        successEl.style.opacity = '0';
+        requestAnimationFrame(function() {
+            successEl.style.opacity = '1';
+        });
+        history.replaceState(null, '', window.location.pathname + window.location.hash);
+    }
 }); 
