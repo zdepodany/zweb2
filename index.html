@@ -268,24 +268,31 @@
       <p class="paragraph center">Pojďme najít to nejlepší řešení.</p>
     </div>
     <div class="reference-slider"></div>
+    <div id="form-success-message" class="form-success-message" role="alert" aria-live="polite" hidden>
+      <span class="form-success-icon" aria-hidden="true">✓</span>
+      <p class="form-success-text">Zpráva byla odeslána. Děkujeme — brzy se ozveme.</p>
+    </div>
     <div class="form-wrapper">
-      <form class="form">
+      <form class="form" action="https://formsubmit.co/zdepodany@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Nová zpráva z webu zdenda.xyz">
+        <input type="hidden" name="_next" value="https://zdenda.xyz/?sent=1#form">
+        <input type="hidden" name="_template" value="box">
         <div class="form-block">
           <div class="text-field-wrapper">
-            <label class="field-label">Jméno</label>
-            <input type="text" class="text-field" placeholder="Jak vás mám oslovovat?" required>
+            <label class="field-label" for="form-name">Jméno</label>
+            <input id="form-name" type="text" class="text-field" name="name" placeholder="Jak vás mám oslovovat?" autocomplete="name" required>
           </div>
           <div class="text-field-wrapper">
-            <label class="field-label">Email</label>
-            <input type="email" class="text-field" placeholder="Váš email pro odpověď" required>
+            <label class="field-label" for="form-email">Email</label>
+            <input id="form-email" type="email" class="text-field" name="email" placeholder="Váš email pro odpověď" autocomplete="email" required>
           </div>
           <div class="text-field-wrapper">
-            <label class="field-label">Telefon</label>
-            <input type="tel" class="text-field" placeholder="Váš telefon (nepovinné)">
+            <label class="field-label" for="form-phone">Telefon</label>
+            <input id="form-phone" type="tel" class="text-field" name="phone" placeholder="Váš telefon (nepovinné)" autocomplete="tel">
           </div>
           <div class="text-field-wrapper">
-            <label class="field-label">Zpráva</label>
-            <textarea class="text-field big-field" placeholder="Co byste chtěli řešit?" required></textarea>
+            <label class="field-label" for="form-message">Zpráva</label>
+            <textarea id="form-message" class="text-field big-field" name="message" placeholder="Co byste chtěli řešit?" required></textarea>
           </div>
           <button type="submit" class="button w-button">Odeslat zprávu</button>
         </div>
